@@ -1,0 +1,48 @@
+@use "colors" as *;
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: $off-black;
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+  }
+
+  a {
+    color: $off-black;
+    text-decoration: none;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  svg {
+    width: 1.5rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  li {
+    margin: 0;
+  }
+  
+  article > * + * {
+    margin-top: 1rem;
+  }

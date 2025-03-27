@@ -1,0 +1,219 @@
+@use 'colors' as *;
+@use 'sizing' as *;
+@use 'typography' as *;
+
+header {
+    .top-banner {
+        background-color: $dark-red;
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0.5rem 0;
+
+        svg {
+            fill: $off-white;
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $off-white;
+
+        padding: $baseline 0 $baseline 0;
+
+        .menu-mobile {
+            width: 50%;
+            button {
+                background-color: $off-white;
+                border: none;
+                width: 80%;
+
+                svg {
+                    width: 100%;
+                    cursor: pointer;
+
+                    path {
+                        stroke-width: 30;
+                        stroke-linecap: round;
+                        stroke: $dark-red;
+                        fill:  none;
+                        transition: all 0.5s ease-in-out;
+
+                        &.top-bar,
+                        &.bottom-bar {
+                            stroke-dasharray: 240px 910px;
+                        }
+
+                        &.middle-bar {
+                            stroke-dasharray: 240px 240px;
+                        }
+                    }
+
+                    &.open {
+                        path {
+                            &.top-bar,
+                            &.bottom-bar {
+                                stroke-dashoffset: -650px;
+                            }
+
+                            &.middle-bar {
+                                stroke-dasharray: 0px 220px;
+                                stroke-dashoffset: -120px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main-nav {
+                position: absolute;
+                background-color: $off-white;
+                top: 8rem;
+                padding: 1rem 2rem 2rem 1.5rem;
+
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                z-index: 1;
+                transform: translateX(-20px);
+                transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+                .search-wrapper {
+                    position: relative;
+
+                    input {
+                        border: 1px solid $dark-red;
+                        border-radius: 5px;
+                        padding: 3px;
+                        width: 100%;
+                        height: 2rem;
+
+                        &::placeholder {
+                            color: $dark-red;
+                        }
+
+                        &:focus,
+                        &:active {
+                            border: 1px solid $dark-green;
+                        }
+
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 4px;
+                        right: 5px;
+
+                        svg {
+                            path {
+                                stroke: $dark-red;
+                            }
+                        }
+                    }
+                }
+
+                .main-menu {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    &__item {
+                        font-family: "Merriweather", serif;
+                        font-weight: 700;
+                        padding: 0.5rem 0;
+                        border-bottom: 1px solid $dark-red;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        &.dropdown {
+                            display: flex;
+                            flex-direction: column;
+
+                            .dropdown-menu {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                width: 100%;
+
+                                &.open svg  {
+                                    transform: rotate(90deg);
+                                    transition: transform 0.3s ease-in-out;
+                                }
+                            }
+
+                            .sub-menu {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 0.5rem;
+                                margin: 1rem 0;
+                                display: none;
+
+                                display: none;
+                                transform: translateY(-10px);
+                                transition: transform 0.4s ease-in-out, display 0.3s ease-in-out;
+
+                                &__item {
+                                    font-family: "Nunito", sans-serif;
+                                    font-weight: 400;
+                                }
+
+                                &.open {
+                                    display: block;
+                                    transform: translateY(0);
+                                }
+                            }
+
+                            
+                        }
+                    }
+
+                    
+                }
+            }
+
+            .open {
+                max-height: 700px;
+                opacity: 1;
+                overflow: visible;
+                transform: translateY(0);
+            }
+        }
+
+        .site-id {
+            a {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 70%;
+                }
+            }
+        }
+
+        .right-header {
+            width: 30%;
+            .user-info {
+                display: flex;
+                justify-content: center;
+
+                svg {
+                    circle {
+                        stroke: $dark-red;
+                    }
+
+                    path {
+                        stroke: $dark-red;
+                    }
+                }
+            }
+        }
+    }
+}

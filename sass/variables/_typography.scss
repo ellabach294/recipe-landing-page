@@ -1,0 +1,27 @@
+@use 'colors' as *;
+@use 'sizing' as *;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather", serif;
+}
+
+h1 {
+    font-size: clamp(2rem, 1.4643rem + 3.9286vw, 3rem);
+
+    &.logo {
+        display: none;
+    }
+}
+
+h2 {
+    font-size: clamp(1.5625rem, 1.4375rem + 0.625vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 1.1607rem + 0.4464vw, 1.5625rem);
+}
+
+p {
+    font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+    margin-bottom: $baseline;
+}
