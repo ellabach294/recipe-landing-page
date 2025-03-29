@@ -100,20 +100,21 @@
             </div>
 
             <!-- Navigation Tablet and Desktop - hide in mobile and display in tablet and desktop -->
-            <div class="menu-desktop" style="display: none;">
+            <div class="menu-desktop">
                 <nav class="main-nav">
                     <ul class="main-menu">
                         <li class="main-menu__item"><a href="/">Home</a></li>
                         <li class="main-menu__item"><a href="/">About</a></li>
-                        <li class="main-menu__item"><a href="/">Recipes</a></li>
-                        <li class="main-menu__item sub-menu">
-                            <a href="/">Weekly Quizzes</a>
-                            <svg fill="none" viewBox="0 0 24 24">
-                                <path fill="#0F0F0F"
-                                    d="M9.71 18.293a1 1 0 001.415 0l4.887-4.892a2 2 0 000-2.828l-4.89-4.89a1 1 0 00-1.415 1.414l4.186 4.185a1 1 0 010 1.415L9.71 16.879a1 1 0 000 1.414z" />
-                            </svg>
+                        <li class="main-menu__item dropdown">
+                            <div class="sub-dropdown">
+                                <a href="/">Recipes</a>
+                                <svg fill="none" viewBox="0 0 24 24">
+                                    <path fill="#0F0F0F"
+                                        d="M9.71 18.293a1 1 0 001.415 0l4.887-4.892a2 2 0 000-2.828l-4.89-4.89a1 1 0 00-1.415 1.414l4.186 4.185a1 1 0 010 1.415L9.71 16.879a1 1 0 000 1.414z" />
+                                </svg>
+                            </div>
 
-                            <ul class="sub-menu__group">
+                            <ul class="sub-menu">
                                 <li class="sub-menu__item"><a href="/">Submit Your Recipe</a></li>
                                 <li class="sub-menu__item"><a href="/">Recipe by Categories</a></li>
                                 <li class="sub-menu__item"><a href="/">Recipes by Seasons</a></li>
@@ -121,11 +122,20 @@
                                 <li class="sub-menu__item"><a href="/">View all Recipes</a></li>
                             </ul>
                         </li>
+                        <li class="main-menu__item"><a href="/">Weekly Quizzes</a></li>
                         <li class="main-menu__item"><a href="/">Pro Tips</a></li>
                         <li class="main-menu__item"><a href="/">Subcribe</a></li>
                         <li class="main-menu__item"><a href="/">Contact Us</a></li>
                     </ul>
                 </nav>
+
+                <button class="nav-toggle" aria-label="Overflow hidden Menu" aria-expanded="false" aria-controls="menu-links">
+                    More
+                    <svg fill="none" viewBox="0 0 24 24">
+                        <path fill="#0F0F0F"
+                            d="M9.71 18.293a1 1 0 001.415 0l4.887-4.892a2 2 0 000-2.828l-4.89-4.89a1 1 0 00-1.415 1.414l4.186 4.185a1 1 0 010 1.415L9.71 16.879a1 1 0 000 1.414z" />
+                    </svg>
+                </button>
             </div>
             
             <!-- Logo -->
