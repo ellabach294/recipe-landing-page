@@ -75,6 +75,9 @@ button {
   padding: 0;
 }
 
+header {
+  background-color: #F5F5F5;
+}
 header .top-banner {
   background-color: #800000;
   align-items: center;
@@ -90,7 +93,8 @@ header .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F5F5F5;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 1.6875rem 0 1.6875rem 0;
 }
 header .header .menu-mobile {
@@ -126,7 +130,7 @@ header .header .menu-mobile button svg.open path.middle-bar {
   stroke-dasharray: 0px 220px;
   stroke-dashoffset: -120px;
 }
-header .header .menu-mobile .main-nav {
+header .header .menu-mobile .main-nav-mobile {
   position: absolute;
   background-color: #F5F5F5;
   top: 8rem;
@@ -141,66 +145,66 @@ header .header .menu-mobile .main-nav {
   transform: translateX(-20px);
   transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
-header .header .menu-mobile .main-nav .search-wrapper {
+header .header .menu-mobile .main-nav-mobile .search-wrapper {
   position: relative;
 }
-header .header .menu-mobile .main-nav .search-wrapper input {
+header .header .menu-mobile .main-nav-mobile .search-wrapper input {
   border: 1px solid #800000;
   border-radius: 5px;
   padding: 8px 10px;
   width: 100%;
   height: 2rem;
 }
-header .header .menu-mobile .main-nav .search-wrapper input::placeholder {
+header .header .menu-mobile .main-nav-mobile .search-wrapper input::placeholder {
   color: #800000;
 }
-header .header .menu-mobile .main-nav .search-wrapper input:focus, header .header .menu-mobile .main-nav .search-wrapper input:active {
+header .header .menu-mobile .main-nav-mobile .search-wrapper input:focus, header .header .menu-mobile .main-nav-mobile .search-wrapper input:active {
   border: 1px solid #1F2F16;
 }
-header .header .menu-mobile .main-nav .search-wrapper label {
+header .header .menu-mobile .main-nav-mobile .search-wrapper label {
   position: absolute;
   top: 4px;
   right: 10px;
   cursor: pointer;
 }
-header .header .menu-mobile .main-nav .search-wrapper label svg path {
+header .header .menu-mobile .main-nav-mobile .search-wrapper label svg path {
   stroke: #800000;
 }
-header .header .menu-mobile .main-nav .main-menu {
+header .header .menu-mobile .main-nav-mobile .main-menu {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-header .header .menu-mobile .main-nav .main-menu__item {
+header .header .menu-mobile .main-nav-mobile .main-menu__item {
   font-family: "Merriweather", serif;
   font-weight: 700;
   padding: 0.5rem 0;
   border-bottom: 1px solid #800000;
 }
-header .header .menu-mobile .main-nav .main-menu__item:last-child {
+header .header .menu-mobile .main-nav-mobile .main-menu__item:last-child {
   border-bottom: none;
 }
-header .header .menu-mobile .main-nav .main-menu__item:hover a {
+header .header .menu-mobile .main-nav-mobile .main-menu__item:hover a {
   color: #800000;
 }
-header .header .menu-mobile .main-nav .main-menu__item:hover svg path {
+header .header .menu-mobile .main-nav-mobile .main-menu__item:hover svg path {
   fill: #800000;
 }
-header .header .menu-mobile .main-nav .main-menu__item.dropdown {
+header .header .menu-mobile .main-nav-mobile .main-menu__item.dropdown-mobile {
   display: flex;
   flex-direction: column;
 }
-header .header .menu-mobile .main-nav .main-menu__item.dropdown .dropdown-menu {
+header .header .menu-mobile .main-nav-mobile .main-menu__item.dropdown-mobile .dropdown-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-header .header .menu-mobile .main-nav .main-menu__item.dropdown .dropdown-menu.open svg {
+header .header .menu-mobile .main-nav-mobile .main-menu__item.dropdown-mobile .dropdown-menu.open svg {
   transform: rotate(90deg);
   transition: transform 0.3s ease-in-out;
 }
-header .header .menu-mobile .main-nav .main-menu__item.dropdown .sub-menu {
+header .header .menu-mobile .main-nav-mobile .main-menu__item.dropdown-mobile .sub-menu-mobile {
   display: flex;
   display: none;
   flex-direction: column;
@@ -209,16 +213,16 @@ header .header .menu-mobile .main-nav .main-menu__item.dropdown .sub-menu {
   transform: translateY(-10px);
   transition: transform 0.4s ease-in-out, display 0.3s ease-in-out;
 }
-header .header .menu-mobile .main-nav .main-menu__item.dropdown .sub-menu__item {
+header .header .menu-mobile .main-nav-mobile .main-menu__item.dropdown-mobile .sub-menu-mobile__item {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   padding: 0.25rem 0;
 }
-header .header .menu-mobile .main-nav .main-menu__item.dropdown .sub-menu__item:hover {
+header .header .menu-mobile .main-nav-mobile .main-menu__item.dropdown-mobile .sub-menu-mobile__item:hover {
   text-decoration: underline;
   color: #800000;
 }
-header .header .menu-mobile .main-nav .main-menu__item.dropdown .sub-menu.open {
+header .header .menu-mobile .main-nav-mobile .main-menu__item.dropdown-mobile .sub-menu-mobile.open {
   display: block;
   transform: translateY(0);
 }
@@ -226,7 +230,7 @@ header .header .menu-mobile .open {
   max-height: 700px;
   opacity: 1;
   overflow: visible;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 @media screen and (min-width: 600px) {
   header .header .menu-mobile {
@@ -244,52 +248,99 @@ header .header .menu-desktop {
     position: relative;
     width: 65%;
   }
-  header .header .menu-desktop .main-nav {
+  header .header .menu-desktop .main-nav-desktop {
     display: flex;
     width: 85%;
     overflow: hidden;
     z-index: 1;
   }
-  header .header .menu-desktop .main-nav .main-menu {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop {
     display: flex;
+    flex-wrap: wrap;
+    height: 1.5rem;
+    overflow: hidden;
     gap: 1rem;
   }
-  header .header .menu-desktop .main-nav .main-menu .main-menu__item {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item {
     position: relative;
     white-space: nowrap;
   }
-  header .header .menu-desktop .main-nav .main-menu .main-menu__item.dropdown {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item:hover a {
+    color: #800000;
+  }
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop {
     display: flex;
     flex-direction: column;
     position: relative;
   }
-  header .header .menu-desktop .main-nav .main-menu .main-menu__item.dropdown .sub-dropdown {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-dropdown {
     display: flex;
     align-items: center;
     cursor: pointer;
   }
-  header .header .menu-desktop .main-nav .main-menu .main-menu__item.dropdown .sub-dropdown.open svg {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-dropdown svg {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-dropdown:hover svg path {
+    fill: #800000;
+  }
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-dropdown.open svg {
     transform: rotate(90deg);
     transition: transform 0.3s ease-in-out;
   }
-  header .header .menu-desktop .main-nav .main-menu .main-menu__item.dropdown .sub-menu {
-    transform: translateY(-10px);
-    transition: transform 0.4s ease-in-out, display 0.3s ease-in-out;
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop {
+    display: none;
+    transform: translateY(10px);
+    transition: display 0.5s ease-in, transform 0.5s ease-in;
     position: fixed;
-    top: 12%;
+    top: 9%;
     background: #F5F5F5;
+    padding: 0 1rem 1rem;
+    box-shadow: 5px 5px 10px #ced4da;
   }
-  header .header .menu-desktop .main-nav .main-menu .main-menu__item.dropdown .sub-menu .sub-menu__item {
-    padding: 10px;
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop .sub-menu__item {
+    padding: 10px 0;
     white-space: nowrap;
   }
-  header .header .menu-desktop .main-nav .main-menu .main-menu__item.dropdown .sub-menu.open {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop .sub-menu__item:hover {
+    text-decoration: underline;
+    color: #800000;
+  }
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop.open {
     display: block;
-    transform: translateY(0);
+    transform: translateY(10px);
+    transition: display 0.5s ease-out, transform 0.5s ease-out;
   }
 }
 @media screen and (min-width: 600px) and (min-width: 900px) {
-  header .header .menu-desktop .main-nav {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop {
+    top: 10%;
+  }
+}
+@media screen and (min-width: 600px) and (min-width: 1100px) {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop {
+    top: 11%;
+  }
+}
+@media screen and (min-width: 600px) and (min-width: 1100px) {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop {
+    top: 12%;
+  }
+}
+@media screen and (min-width: 600px) and (min-width: 1100px) {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop {
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (min-width: 600px) {
+  header .header .menu-desktop .main-nav-desktop .main-menu-desktop.show {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+@media screen and (min-width: 600px) and (min-width: 900px) {
+  header .header .menu-desktop .main-nav-desktop {
     width: 100%;
   }
 }
@@ -297,11 +348,12 @@ header .header .menu-desktop {
   header .header .menu-desktop .nav-toggle {
     display: flex;
     align-items: center;
+    cursor: pointer;
     background: none;
     border: none;
   }
 }
-@media screen and (min-width: 600px) and (min-width: 900px) {
+@media screen and (min-width: 600px) and (min-width: 1100px) {
   header .header .menu-desktop .nav-toggle {
     display: none;
   }
@@ -322,7 +374,7 @@ header .header .site-id a img {
     justify-content: flex-start;
   }
   header .header .site-id a img {
-    max-width: 50%;
+    max-width: 10rem;
   }
 }
 header .header .right-header {
