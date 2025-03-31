@@ -1,0 +1,159 @@
+@use "colors" as *;
+@use "sizing" as *;
+@use "typography" as *;
+
+footer {
+    background-color: $off-white;
+
+    .footer {
+        align-items: center;
+        color: $dark-red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 0 1rem;
+
+        max-width: 1100px;
+        margin: 0 auto;
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+
+            .footer-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+        
+                gap: 1rem;
+        
+                &__logo {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: 50%;
+                    }
+                }
+        
+                p {
+                    text-transform: uppercase;
+                    margin-bottom: 0;
+                }
+        
+                &__social {
+                    svg {
+                        path {
+                            fill: $dark-red;
+                        }
+                    }
+                }
+        
+                &__btn {
+                    button {
+                        background: $dark-red;
+                        border: none;
+                        border-radius: 10px;
+        
+                        color: $off-white;
+                        text-transform: uppercase;
+                        padding: 0.5rem 1rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        
+            .footer-links {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 1rem;
+        
+                p {
+                    font-family: "Merriweather", serif;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    margin-bottom: 0;
+                }
+        
+                &__menu {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+        
+                    @media screen and (min-width: $xs) {
+                        flex-direction: row;
+                        gap: 4rem;
+                    }
+                }
+        
+                &__menu-right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+        
+                    li {
+                        a {
+                            color: $dark-red;
+        
+                            &:hover {
+                                color: $off-black;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+        
+                    @media screen and (min-width: $xs) {
+                        align-items: flex-start;
+                        gap: 1.5rem;
+                    }
+                }
+        
+                &__menu-left {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+        
+                    li {
+                        a {
+                            color: $dark-red;
+        
+                            &:hover {
+                                color: $off-black;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+        
+                    @media screen and (min-width: $xs) {
+                        align-items: flex-start;
+                        gap: 1.5rem;
+                    }
+                }
+        
+                @media screen and (min-width: $xs) {
+                    align-items: flex-start;
+                }
+            }
+
+            @media screen and (min-width: $xs) {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding: 0 2rem;
+            }
+        }
+
+
+    }
+
+    .copyright {
+        margin-top: 2rem;
+    }
+}
