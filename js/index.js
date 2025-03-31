@@ -97,4 +97,22 @@ if(openMenu) {
     })
 }
 
+//Search overlay function
+document.addEventListener("DOMContentLoaded", (e) => {
+    const searchBtn = document.getElementById("search-btn")
+    const closeBtn = document.getElementById("close-btn")
+    const searchContainer = document.getElementById("search-container")
+    const overlayContainer = document.getElementById("overlay")
 
+    searchBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        searchContainer.classList.add("active")
+        overlayContainer.classList.add("show")
+    })
+
+    closeBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        searchContainer.classList.remove("active")
+        overlayContainer.classList.remove("show")
+    })
+})

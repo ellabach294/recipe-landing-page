@@ -243,7 +243,7 @@ header .header .menu-desktop {
 @media screen and (min-width: 600px) {
   header .header .menu-desktop {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     position: relative;
     width: 65%;
@@ -294,10 +294,10 @@ header .header .menu-desktop {
     transform: translateY(10px);
     transition: display 0.5s ease-in, transform 0.5s ease-in;
     position: fixed;
-    top: 9%;
+    top: 7%;
     background: #F5F5F5;
     padding: 0 1rem 1rem;
-    box-shadow: 5px 5px 10px #ced4da;
+    box-shadow: 0px 2px 2px #ced4da;
   }
   header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop .sub-menu__item {
     padding: 10px 0;
@@ -313,19 +313,9 @@ header .header .menu-desktop {
     transition: display 0.5s ease-out, transform 0.5s ease-out;
   }
 }
-@media screen and (min-width: 600px) and (min-width: 900px) {
-  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop {
-    top: 10%;
-  }
-}
 @media screen and (min-width: 600px) and (min-width: 1100px) {
   header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop {
-    top: 11%;
-  }
-}
-@media screen and (min-width: 600px) and (min-width: 1100px) {
-  header .header .menu-desktop .main-nav-desktop .main-menu-desktop .main-menu__item.dropdown-desktop .sub-menu-desktop {
-    top: 12%;
+    top: 9%;
   }
 }
 @media screen and (min-width: 600px) and (min-width: 1100px) {
@@ -358,6 +348,11 @@ header .header .menu-desktop {
     display: none;
   }
 }
+@media screen and (min-width: 1100px) {
+  header .header .menu-desktop {
+    align-items: center;
+  }
+}
 header .header .site-id a {
   display: flex;
   justify-content: center;
@@ -378,11 +373,78 @@ header .header .site-id a img {
   }
 }
 header .header .right-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   width: 30%;
 }
-header .header .right-header .user-info {
-  display: flex;
-  justify-content: center;
+header .header .right-header .search {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  header .header .right-header .search {
+    display: flex;
+    align-items: flex-start;
+  }
+  header .header .right-header .search button {
+    background: none;
+    border: none;
+  }
+  header .header .right-header .search button.search-icon {
+    cursor: pointer;
+  }
+  header .header .right-header .search button.search-icon svg path {
+    stroke: #800000;
+  }
+  header .header .right-header .search .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
+  header .header .right-header .search .search-container .close-btn {
+    cursor: pointer;
+    padding-top: 5px;
+  }
+  header .header .right-header .search .search-container .close-btn svg path {
+    stroke: #800000;
+  }
+  header .header .right-header .search .search-container.active {
+    top: 5%;
+  }
+  header .header .right-header .search .search-container .search-input {
+    width: 75%;
+    border-radius: 5px;
+    border: 1px solid #800000;
+    background: none;
+    padding: 0.5rem;
+  }
+  header .header .right-header .search .overlay {
+    display: none;
+    transform: translateX(10px);
+    background: #F5F5F5;
+    position: fixed;
+    top: 3.4%;
+    left: 0;
+    height: 4rem;
+    width: 100%;
+    z-index: 10;
+    transition: display 0.3s ease-in-out;
+  }
+  header .header .right-header .search .overlay.show {
+    display: block;
+  }
+}
+@media screen and (min-width: 600px) and (min-width: 1100px) {
+  header .header .right-header .search .overlay {
+    top: 5%;
+  }
 }
 header .header .right-header .user-info svg circle {
   stroke: #800000;
@@ -393,6 +455,12 @@ header .header .right-header .user-info svg path {
 @media screen and (min-width: 600px) {
   header .header {
     padding: 1rem;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1100px) {
+  header .header {
+    align-items: center;
   }
 }
 

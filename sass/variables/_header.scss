@@ -218,7 +218,7 @@ header {
 
             @media screen and (min-width: $xs) {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: space-between;
                 position: relative;
                 width: 65%;
@@ -280,10 +280,10 @@ header {
                                     transform: translateY(10px);
                                     transition: display 0.5s ease-in, transform 0.5s ease-in;
                                     position: fixed;
-                                    top: 9%;
+                                    top: 7%;
                                     background: $off-white;
                                     padding: 0 1rem 1rem;
-                                    box-shadow: 5px 5px 10px $gray;
+                                    box-shadow: 0px 2px 2px $gray;
 
                                     .sub-menu__item {
                                         padding: 10px 0;
@@ -301,16 +301,8 @@ header {
                                         transition: display 0.5s ease-out, transform 0.5s ease-out;
                                     }
 
-                                    @media screen and (min-width: $md) {
-                                        top: 10%;
-                                    }
-
                                     @media screen and (min-width: $lg) {
-                                        top: 11%;
-                                    }
-
-                                    @media screen and (min-width: $lg) {
-                                        top: 12%;
+                                        top: 9%;
                                     }
                                 }
                             }
@@ -343,6 +335,10 @@ header {
                     }
                 }
             }
+
+            @media screen and (min-width: $lg) {
+                align-items: center;
+            }
         }
 
         .site-id {
@@ -370,12 +366,93 @@ header {
         }
 
         .right-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
             width: 30%;
 
-            .user-info {
-                display: flex;
-                justify-content: center;
+            .search {
+                display: none;
 
+                @media screen and (min-width: $xs) {
+                    display: flex;
+                    align-items: flex-start;
+
+                    button {
+                        background: none;
+                        border: none;
+
+                        &.search-icon {
+                            cursor: pointer;
+                            svg {
+                                path {
+                                    stroke: $dark-red;
+                                }
+                            }
+                        }
+                    }
+
+                    .search-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+
+                        position: fixed;
+                        top: -100%;
+                        left: 0;
+                        width: 100%;
+                        z-index: 50;
+
+                        .close-btn {
+                            cursor: pointer;
+                            padding-top: 5px;
+                            svg {
+                                path {
+                                    stroke: $dark-red;
+                                }
+                            }
+                        }
+                        
+                        &.active {
+                            top: 5%;
+                        }
+
+                        .search-input {
+                            width: 75%;
+                            border-radius: 5px;
+                            border: 1px solid $dark-red;
+                            background: none;
+                            padding: 0.5rem;
+                        }
+                    }
+
+                    .overlay {
+                        display: none;
+                        transform: translateX(10px);
+                        background: $off-white;
+                        position: fixed;
+                        top: 3.4%;
+                        left: 0;
+                        height: 4rem;
+                        width: 100%;
+                        z-index: 10;
+                        transition: display 0.3s ease-in-out;
+
+                        &.show {
+                            display: block;
+                            
+                        }
+
+                        @media screen and (min-width: $lg) {
+                            top: 5%;
+                        }
+                    }
+                }
+            }
+
+            .user-info {
                 svg {
                     circle {
                         stroke: $dark-red;
@@ -390,6 +467,11 @@ header {
 
         @media screen and (min-width: $xs) {
             padding: 1rem;
+            align-items: flex-start;
+        }
+
+        @media screen and (min-width: $lg) {
+            align-items: center;
         }
     }
 }
