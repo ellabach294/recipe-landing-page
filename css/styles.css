@@ -89,6 +89,7 @@ header .top-banner {
 }
 header .top-banner svg {
   fill: #F5F5F5;
+  cursor: pointer;
 }
 header .header {
   display: flex;
