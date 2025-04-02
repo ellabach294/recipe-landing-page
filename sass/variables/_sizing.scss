@@ -4,3 +4,8 @@ $sm: 740px;
 $md: 900px;
 $lg: 1100px;
 $xl: 1440px;
+
+main {
+    max-width: $lg;
+    margin: 0 auto;
+}

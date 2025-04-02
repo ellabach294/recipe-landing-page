@@ -1,0 +1,29 @@
+@use "colors" as *;
+
+@mixin button-base($bg-color, $border, $text-color: $off-white) {
+    height: 50px;
+    color: $text-color;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: $bg-color;
+    border: $border;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+  
+    &:hover {
+      background-color: $dark-red;
+      color: $off-white;
+      border: 2px solid $dark-red;
+    }
+  }
+  
+  .btn-primary {
+    @include button-base($dark-red, 2px solid $dark-red);
+    width: 50%;
+  }

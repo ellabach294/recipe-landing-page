@@ -2,6 +2,10 @@
 @use 'variables/colors';
 @use 'variables/sizing';
 @use 'variables/typography';
+@use 'variables/mixins';
 
 @use 'variables/header';
 @use 'variables/footer';
+
+@use 'components/hero-banner';
+@use 'components/page'
