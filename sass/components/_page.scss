@@ -8,6 +8,8 @@
     gap: 1rem;
 
     padding: 1.5rem 0.5rem;
+    max-width: $lg;
+    margin: 0 auto;
 
     .categories-mobile {
         display: flex;
@@ -38,5 +40,63 @@
 
     .categories-desktop {
         display: none;
+    }
+
+    @media screen and (min-width: $sm) {
+        .categories-mobile {
+            justify-content: center;
+            width: 100%;
+            gap: 1.5rem;
+            .left-side {
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 1.5rem;
+            }
+
+            .right-side {
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 1.5rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: $lg) {
+        .categories-mobile {
+            gap: 4rem;
+            .left-side {
+                gap: 4rem;
+            }
+
+            .right-side {
+                gap: 4rem;
+
+                div:last-child{
+                    display: none;
+                }
+            }
+        }
+
+        .categories-desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+
+            .category {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+        
+                img {
+                    border-radius: 50%;
+                    object-fit: cover;
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
     }
 }
