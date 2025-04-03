@@ -14,12 +14,12 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(1.5625rem, 1.4375rem + 0.625vw, 2rem);
+    font-size: clamp(1.4rem, 1.4375rem + 0.625vw, 2rem);
     color: $dark-red;
 }
 
 h3 {
-    font-size: clamp(1.25rem, 1.1607rem + 0.4464vw, 1.5625rem);
+    font-size: clamp(1.1rem, 1.1607rem + 0.4464vw, 1.5625rem);
 }
 
 p {

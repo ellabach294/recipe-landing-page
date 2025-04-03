@@ -9,7 +9,7 @@
 
     padding: 1.5rem 0.5rem;
 
-    .categories {
+    .categories-mobile {
         display: flex;
         justify-content: space-around;
         gap: 1rem;
@@ -34,5 +34,9 @@
                 }
             }
         }
+    }
+
+    .categories-desktop {
+        display: none;
     }
 }
