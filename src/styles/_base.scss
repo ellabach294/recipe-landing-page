@@ -1,0 +1,118 @@
+@use '_variables' as *;
+
+body {
+    font-family: $font-body;
+    font-size: clamp(1.125rem, 1.162rem + -0.1852vw, 1rem);
+    line-height: 1.5;
+    color: $off-black;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-heading;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: clamp(2rem, 1.6444rem + 1.7778vw, 3.8rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 1.3519rem + 0.7407vw, 2rem);
+    color: $dark-red;
+}
+
+h4 {
+    font-size: clamp(1.25rem, 1.1759rem + 0.3704vw, 1.5rem);
+    color: $dark-red;
+}
+
+a {
+    color: $off-black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $dark-red;
+        text-decoration: underline;
+    }
+}
+
+button {
+    background-color: $dark-red;
+    border: 1px solid $dark-red;
+    border-radius: 5px;
+    color: $off-white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s ease-in-out;
+    width: auto;
+
+    a {
+        color: $off-white;
+    }
+
+    &:hover {
+        background-color: $off-white;
+        color: $dark-red;
+        
+        a {
+            color: $dark-red;
+            text-decoration: none;
+        }
+    }
+}
+
+input {
+    border: 1px solid $dark-red;
+    border-radius: 5px;
+    padding: 0.5rem;
+
+    &::placeholder {
+        color: $dark-red;
+        opacity: 0.8;
+    }
+}
+
+svg {
+    width: 2rem;
+}
+
+.main-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    main {
+        flex-grow: 1;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto !important;
+}
+
+.scroll-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+    svg {
+        font-size: 2rem;
+    }
+
+    &:hover {
+        color: $dark-red;
+        text-decoration: underline;
+    }
+}

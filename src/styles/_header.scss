@@ -1,0 +1,267 @@
+@use '_variables' as *;
+@use '_mixins' as *;
+
+header {
+    z-index: 10;
+    .top-banner {
+        background-color: $dark-red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0;
+
+        svg {
+            width: 1.75rem;
+            fill: $off-white;
+        }
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        width: 100%;
+
+        .siteid {
+            flex: 0 0 calc(100%/3);
+            display: flex;
+            justify-content: center;
+            
+            .logo {
+                width: 70%;
+            }
+
+            @include respond-md {
+                flex: 0 0 20%;
+                justify-content: space-around;
+
+                .logo {
+                    width: 60%;
+                }
+            }
+
+            @include respond-xl {
+                .logo {
+                    width: 50%;
+                }
+            }
+        }
+    
+        .navbar {
+            flex: 0 0 calc(100%/3);
+            order: -1;
+            // ****** Mobile Nav *******
+            .mobile-menu {
+                position: relative;
+
+                .hamburger-icon {
+                    font-size: 2rem;
+                    cursor: pointer;
+                }
+        
+                .mobile-menu {
+                    background: $off-white;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    position: absolute;
+                    top: 3rem;
+        
+                    padding: 1.5rem;
+                    width: 100vw;
+        
+                    .search-bar {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        
+                        input {
+                            width: 100%;
+                        }
+        
+                        svg {
+                            font-size: 1.5rem;
+                            stroke: $dark-red;
+                            position: absolute;
+                            right:10px;
+                            top: 3px;
+                            cursor: pointer;
+                        }
+                    }
+        
+                    .nav-links {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+        
+                        font-family: $font-heading;
+                        font-weight: 600;
+        
+                        li {
+                            padding: 0.5rem;
+                        }
+        
+                        li:not(:last-child) {
+                            border-bottom: 1px solid $dark-red;
+        
+                            .submenu {
+                                font-family: $font-body;
+                                font-weight: 400;
+            
+                                display: flex;
+                                flex-direction: column;
+                                gap: 0.65rem;
+            
+                                padding: 1rem 0;
+                            }
+        
+                            li {
+                                border-bottom: unset;
+                                padding: 0;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+    
+            // ****** Tablet & Desktop Nav *******
+            @include respond-md {
+                order: 0;
+                flex: 0 0 70%;
+                .nav-links {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: $font-heading;
+                    font-weight: 600;
+                    position: relative;
+                    gap: 0.5rem;
+        
+                    .nav-items {
+                        position: relative;
+                        width: 100px;
+                        a {
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+        
+                            svg {
+                                transition: all 0.4s ease;
+                            }
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 100%;
+                            height: 20px;
+                        }
+        
+                        .submenu {
+                            background-color: $off-white;
+                            box-shadow: 5px 5px 5px $gray;
+                            position: absolute;
+                            top: 100%;
+                            margin-top: 1rem;
+                            padding: 1rem;
+                            transition: all 0.5s ease;
+                            min-width: 250px;
+                            z-index: 10;
+                            
+                            font-family: $font-body;
+                            font-weight: 400;
+
+                            a {
+                                padding: 0.5rem 0;
+                            }
+
+                            &:hover {
+                                display: block;
+                            }
+                        }
+                                
+                        @include respond-xl {
+                            width: 100%;
+                        }
+                    }
+        
+                    .nav-item{
+                        span {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+        
+                            svg {
+                                transition: transform 0.3s ease;
+                            }
+                        }
+                        >.subMenu {
+                            display: flex;
+                            gap: 1rem;
+                            position: absolute;
+                            left: 0;
+                            padding-top: 0.5rem;
+                            
+                            li {
+                                width: 100px;
+
+                                a {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 0 0 calc(100%/3);
+
+            .search-bar {
+                display: flex;
+                align-items: center;
+
+                .search-icon {
+                    font-size: 1.25rem;
+                    stroke: $dark-red;
+                    cursor: pointer;
+                }
+
+                .search-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background: $off-white;
+                    display: flex;
+                    gap: 1rem;
+                    padding: 1.75rem;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .user-icon {
+                font-size: 1.25rem;
+                fill: $dark-red;
+                cursor: pointer;
+            }
+
+            @include respond-md {
+                flex: 0 0 10%;
+                justify-content: space-around;
+            }
+        }
+    }
+}
